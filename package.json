@@ -1,0 +1,8 @@
+{
+  "name": "bot-barbearia",
+  "version": "1.0.0",
+  "dependencies": {
+    "playwright": "^1.40.0",
+    "dotenv": "^16.4.5"
+  }
+}
