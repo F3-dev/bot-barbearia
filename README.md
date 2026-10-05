@@ -49,7 +49,6 @@
 ## Pré-requisitos
 
 * [Node.js](https://nodejs.org/) **v18** ou superior
-* [npm](https://www.npmjs.com/) (incluso com o Node.js)
 * Uma conta ativa na plataforma [CashBarber](https://cashbarber.com.br)
 * Um bot no Telegram criado via [@BotFather](https://t.me/BotFather)
 
