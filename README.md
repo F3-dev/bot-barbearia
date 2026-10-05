@@ -33,7 +33,7 @@ Cadastre em **Settings > Secrets and variables > Actions**:
 - **Frequência:** Executa diariamente às `00:05` (BRT) / `03:05` (UTC).
 - **Validação:** Checa se faltam exatos **6 dias** para o primeiro sábado do mês subsequente.
   - **Diferente de 6 dias:** Encerra em segundos (envia status no Telegram se for domingo).
-  - **Igual a 6 dias:** Loga na plataforma, seleciona a filial/serviço, marca o dia e seleciona o horário (`PREFERRED_TIME` ou fallback mais próximo).
+  - **Igual a 6 dias:** Loga na plataforma, seleciona a filial/profissional/serviço, marca o dia e seleciona o horário (`PREFERRED_TIME` ou fallback mais próximo).
 - **Notificação:** Envia o resultado ou alerta de erro via Telegram.
 
 ---
