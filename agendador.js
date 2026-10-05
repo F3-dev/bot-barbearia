@@ -48,7 +48,7 @@ function getFirstSaturdayOfNextMonth() {
   const diaDaSemana = hojeZerado.getDay(); // 0 = Domingo
 
   if (diaDaSemana === 0) {
-    const msgStatus = `ℹ️ Bot Barbearia Ativo: Faltam ${diffDays} dias para o sábado alvo (${targetDate.toLocaleDateString('pt-BR')}).`;
+    const msgStatus = `Bot Barbeiro Ativo: Faltam ${diffDays} dias para o sábado alvo (${targetDate.toLocaleDateString('pt-BR')}).`;
     await enviarNotificacaoTelegram(msgStatus);
   }
 
@@ -87,7 +87,7 @@ function getFirstSaturdayOfNextMonth() {
     } catch (e) {
       console.log(`Horário ${process.env.PREFERRED_TIME} ocupado ou não encontrado. Buscando alternativa por aproximação...`);
       
-      const horarioAlternativo = page.getByText(/^13:/).first();
+      const horarioAlternativo = page.getByText(/^14:/).first();
       if (await horarioAlternativo.isVisible()) {
         const textoHorario = await horarioAlternativo.innerText();
         await horarioAlternativo.click();
@@ -103,13 +103,13 @@ function getFirstSaturdayOfNextMonth() {
     await page.getByRole('button', { name: 'Agendar' }).click();
     await page.getByRole('button', { name: 'OK' }).click();
     
-    const msgSucesso = `✅ Barbearia: Agendado com sucesso para o dia ${targetDate.toLocaleDateString('pt-BR')}!`;
+    const msgSucesso = `Bot Barbeiro: Agendado com sucesso para o dia ${targetDate.toLocaleDateString('pt-BR')}!`;
     console.log(msgSucesso);
     await enviarNotificacaoTelegram(msgSucesso);
 
   } catch (error) {
     console.error('Erro na execução do agendamento:', error);
-    await enviarNotificacaoTelegram(`❌ Erro crítico no bot da barbearia: ${error.message}. Por favor, realize o agendamento manualmente.`);
+    await enviarNotificacaoTelegram(`Erro crítico no Bot Barbeiro: ${error.message}. Por favor, realize o agendamento manualmente.`);
   } finally {
     await browser.close();
   }
